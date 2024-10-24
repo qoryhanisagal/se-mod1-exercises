@@ -1,32 +1,16 @@
-class Uncorn
+class Unicorn  # Fixed class name
+  attr_reader :name, :color  # Fixed :name in attr_reader
 
-  attr_reader :namee
-  attr_accessor :color, :eating
-
-  def initialze(name, color="white")
+  def initialize(name, color="white")  # Fixed initialize spelling
     @name = name
     @color = color
-    @eating = false
   end
 
   def white?
-    @colors == "white"
+    @color == "white"  # Fixed @color spelling
   end
 
-  def say(x)
-    "**;* #{x} **;*"
-
-  def fly
-    if @eating
-      false
-    else
-      true
-    end
+  def say(statement)
+    "*~* #{statement} *~*"
   end
-
-  def eat
-    @eating = true
-    "**;* yummmm cotton candy **;*"
-  end
-
 end

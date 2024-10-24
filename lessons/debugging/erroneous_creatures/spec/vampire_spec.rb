@@ -1,4 +1,5 @@
-require './lib/vampire'
+require 'pry'
+require_relative '../lib/vampire'  # Use require_relative to load the file correctly
 
 RSpec.describe Vampire do
   it "has a name" do
@@ -28,15 +29,17 @@ RSpec.describe Vampire do
   it "is thirsty by default" do
     vampire = Vampire.new("Count von Count", "black")
 
-    expect(vampire.thirsty?).to eq(true)
+    expect(vampire.thirsty?).to eq(true)  # Adjusted to use the thirsty? method
   end
 
   it "is not thirsty after drinking" do
     vampire = Vampire.new("Elizabeth Bathory", "purple")
-
+   
     vampire.drink
-
-    expect(vampire.thirsty?).to eq(false)
+    
+    binding.pry  # Pause to inspect the vampire's thirstiness status
+    
+    expect(vampire.thirsty?).to eq(false)  # Adjusted to use the thirsty? method
   end
 
   it "wears a cape that can be any color" do
@@ -68,6 +71,6 @@ RSpec.describe Vampire do
     vampire.sleep
     vampire.wake
 
-    expect(vampire.thirsty?).to eq(true)
+    expect(vampire.thirsty?).to eq(true)  # Adjusted to use the thirsty? method
   end
 end
